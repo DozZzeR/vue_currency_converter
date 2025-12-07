@@ -1,0 +1,8 @@
+{
+  "extends": ["eslint-config-prettier", "eslint-recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error", // Ошибки Prettier будут показываться как ошибки ESLint
+    "no-unused-vars": "warn" // Пример правила ESLint
+  }
+}
