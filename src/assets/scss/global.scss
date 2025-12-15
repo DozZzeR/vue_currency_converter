@@ -1,0 +1,37 @@
+@use './index.scss' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
+/* default theme if nothing set yet */
+:root:not([data-theme]) {
+  /* set your preferred default: dark */
+  --_default-theme: dark;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg-default);
+  color: var(--text-primary);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Science Gothic', sans-serif;
+  margin: 40px 0 18px;
+  font-size: 44px;
+}
+
+a {
+  color: var(--primary-main);
+}

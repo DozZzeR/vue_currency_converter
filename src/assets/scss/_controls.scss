@@ -1,0 +1,15 @@
+:root {
+  /* “control aliases” map to theme palette/action */
+  --control-bg: var(--bg-paper);
+  --control-fg: var(--text-primary);
+
+  --control-border: var(--outline);
+  --control-border-hover: var(--primary-light);
+  --control-border-focus: var(--primary-main);
+
+  --control-placeholder: var(--text-secondary);
+  --control-ring: var(--action-focus);
+
+  --control-bg-hover: var(--action-hover);
+  --control-bg-active: var(--action-selected);
+}

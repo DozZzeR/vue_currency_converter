@@ -1,0 +1,61 @@
+:root {
+  /* geometry */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+
+  /* typography */
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* focus */
+  --ring-width: 3px;
+
+  /* --- semantic palette roles (values come from theme) --- */
+  --primary-main: ;
+  --primary-light: ;
+  --primary-dark: ;
+  --primary-contrast: ;
+
+  --bg-default: ;
+  --bg-paper: ;
+
+  --text-primary: ;
+  --text-secondary: ;
+  --text-disabled: ;
+
+  --divider: ;
+  --outline: ;
+
+  --action-hover: ;
+  --action-selected: ;
+  --action-focus: ;
+  --action-disabled: ;
+  --action-disabled-bg: ;
+
+  --error-main: ;
+  --success-main: ;
+  --warning-main: ;
+
+  /* optional accent (decorations only) */
+  --accent-main: ;
+
+  /* controls layer defaults */
+  --control-bg: ;
+  --control-fg: ;
+  --control-border: ;
+  --control-border-hover: ;
+  --control-border-focus: ;
+  --control-placeholder: ;
+  --control-ring: ;
+  --control-bg-hover: ;
+  --control-bg-active: ;
+
+  /* buttons */
+  --btn-radius: var(--radius-md);
+  --btn-padding-y: 12px;
+  --btn-padding-x: 16px;
+  --btn-min-h: 44px;
+}
