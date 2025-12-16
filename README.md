@@ -1,44 +1,76 @@
-# cryptotrade
+# Vue Crypto Currency Converter
 
-This template should help get you started developing with Vue 3 in Vite.
+A small educational project built with **Vue 3 + Vite**.  
+The app converts crypto and fiat currencies using the `crypto-convert` library and is meant as a hands-on introduction to Vue’s Composition API and basic application architecture.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Select source and target currencies
+- Enter an amount to convert
+- Currency conversion via `crypto-convert`
+- Basic validation and error handling:
+  - same currency pair
+  - empty or zero amount
+  - unsupported conversion pair
+- Light / Dark theme switcher (CSS variables based)
 
-## Recommended Browser Setup
+## Tech Stack
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Vue 3 (Composition API, `<script setup>`)
+- Vite
+- SCSS (semantic tokens + theme support via CSS variables)
+- `crypto-convert` for exchange rates
 
-## Customize configuration
+## Getting Started
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
+### Install dependencies
 ```sh
 npm install
-```
+````
 
-### Compile and Hot-Reload for Development
+### Run in development mode
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Build for production
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Preview production build
 
 ```sh
-npm run lint
+npm run preview
+```
+
+## Notes
+
+* `crypto-convert` is initialized as a singleton (the library does not allow multiple instances).
+* If a currency pair is not supported by the library, the app will display an error message instead of crashing.
+
+## Project Structure (high level)
+
+* `src/components` — UI components (Input, Selector, Button, etc.)
+* `src/composables` — reusable logic (`useTheme`, etc.)
+* `src/styles` — global styles, theme definitions, and design tokens
+* `src/services` — application services (e.g. `crypto-convert` singleton)
+
+## Possible Improvements / Roadmap
+
+* [ ] Display formatted conversion result
+* [ ] Auto-convert on input with debounce
+* [ ] Favorite currency pairs
+* [ ] Exchange rate caching and refresh indicator
+* [ ] Unit tests for conversion logic
+
+## License
+
+MIT
+
+```
+
+- или написать короткое описание проекта под CV / GitHub bio.
 ```
