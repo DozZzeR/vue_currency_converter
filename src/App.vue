@@ -89,7 +89,6 @@ const convertation = async () => {
   if (error.value) return;
 
   const fn = convert[moneyFrom.value]?.[moneyTo.value];
-  console.log(fn);
   if (typeof fn !== 'function') {
     error.value = `Conversion ${moneyFrom.value} → ${moneyTo.value} is not supported`;
     return;

@@ -1,33 +1,41 @@
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from 'vue';
 
-const KEY = "theme";
+const KEY = 'theme';
 
-export function useTheme() {
-  const theme = ref("dark");
+export const useTheme = () => {
+  const theme = ref('dark');
 
-  function apply(next) {
+  const apply = (next) => {
     theme.value = next;
-    document.documentElement.setAttribute("data-theme", next);
-    try { localStorage.setItem(KEY, next); } catch {}
-  }
+    document.documentElement.setAttribute('data-theme', next);
+    try {
+      localStorage.setItem(KEY, next);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   function toggle() {
-    apply(theme.value === "dark" ? "light" : "dark");
+    apply(theme.value === 'dark' ? 'light' : 'dark');
   }
 
   onMounted(() => {
     const saved = (() => {
-      try { return localStorage.getItem(KEY); } catch { return null; }
+      try {
+        return localStorage.getItem(KEY);
+      } catch {
+        return null;
+      }
     })();
 
-    if (saved === "light" || saved === "dark") {
+    if (saved === 'light' || saved === 'dark') {
       apply(saved);
       return;
     }
 
-    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
-    apply(prefersDark ? "dark" : "light");
+    const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
+    apply(prefersDark ? 'dark' : 'light');
   });
 
   return { theme, apply, toggle };
-}
+};
